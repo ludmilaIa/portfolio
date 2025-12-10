@@ -25,7 +25,7 @@ const projects = [
     title: 'Encomiendas Centro',
     description:
       'Logistics management system for package and shipment tracking. Full-stack application with comprehensive logistics features.',
-    tech: ['Laravel', 'PHP', 'SQL', 'Bootstrap'],
+    tech: ['React', 'React Router', 'Redux', 'Axios'],
     github: 'https://github.com/ludmilaIa/encomiendas_centro',
     demo: '#',
   },

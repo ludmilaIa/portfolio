@@ -7,7 +7,7 @@ type Language = 'es' | 'en'
 interface LanguageContextType {
   language: Language
   setLanguage: (lang: Language) => void
-  t: (key: string) => string
+  t: (key: string) => string | string[]
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
@@ -52,11 +52,34 @@ const translations = {
       title: 'Educación y Certificados',
       education: 'Educación',
       certificates: 'Cursos y Certificados',
+      certificatesList: {
+        udemy: {
+          platform: 'Udemy',
+          course: 'Curso completo de React',
+        },
+        coursera: {
+          platform: 'Coursera',
+          course: 'Certificado Google Cybersecurity Professional',
+        },
+      },
     },
     projects: {
       title: 'Proyectos',
       viewCode: 'Ver Código',
       demo: 'Demo',
+      features: 'Características',
+      myCalendar: {
+        description: 'Aplicación de calendario desarrollada con Flutter para gestionar eventos y horarios. Construida siguiendo las mejores prácticas de desarrollo móvil multiplataforma.',
+        features: ['Gestión de eventos', 'Interfaz intuitiva', 'Sincronización multiplataforma', 'Notificaciones'],
+      },
+      laravelFilament: {
+        description: 'Aplicación Laravel construida con el framework de panel de administración Filament. Cuenta con una interfaz de administración moderna y gestión eficiente del backend.',
+        features: ['Panel de administración', 'Gestión de datos', 'Interfaz moderna', 'Backend eficiente'],
+      },
+      encomiendas: {
+        description: 'Sistema de gestión logística para seguimiento de paquetes y envíos. Aplicación full-stack con características logísticas completas.',
+        features: ['Seguimiento de envíos', 'Gestión de paquetes', 'Dashboard interactivo', 'Integración de APIs'],
+      },
     },
     contact: {
       title: 'Contáctame',
@@ -105,11 +128,34 @@ const translations = {
       title: 'Education & Certificates',
       education: 'Education',
       certificates: 'Courses & Certificates',
+      certificatesList: {
+        udemy: {
+          platform: 'Udemy',
+          course: 'Complete React Course',
+        },
+        coursera: {
+          platform: 'Coursera',
+          course: 'Google Cybersecurity Professional Certificate',
+        },
+      },
     },
     projects: {
       title: 'Projects',
       viewCode: 'View Code',
       demo: 'Demo',
+      features: 'Features',
+      myCalendar: {
+        description: 'A Flutter-based calendar application for managing events and schedules. Built with cross-platform mobile development best practices, featuring an intuitive interface and seamless synchronization.',
+        features: ['Event Management', 'Intuitive Interface', 'Cross-platform Sync', 'Notifications'],
+      },
+      laravelFilament: {
+        description: 'A Laravel application built with Filament admin panel framework. Features a modern admin interface and efficient backend management with comprehensive data handling capabilities.',
+        features: ['Admin Panel', 'Data Management', 'Modern Interface', 'Efficient Backend'],
+      },
+      encomiendas: {
+        description: 'Logistics management system for package and shipment tracking. Full-stack application with comprehensive logistics features including real-time tracking and interactive dashboards.',
+        features: ['Shipment Tracking', 'Package Management', 'Interactive Dashboard', 'API Integration'],
+      },
     },
     contact: {
       title: 'Get In Touch',
@@ -124,11 +170,15 @@ const translations = {
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>('en')
 
-  const t = (key: string): string => {
+  const t = (key: string): string | string[] => {
     const keys = key.split('.')
     let value: any = translations[language]
     for (const k of keys) {
       value = value?.[k]
+    }
+    // If value is an array, return it as is (for features)
+    if (Array.isArray(value)) {
+      return value
     }
     return value || key
   }

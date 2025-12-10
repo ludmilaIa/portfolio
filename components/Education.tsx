@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { GraduationCap } from 'lucide-react'
+import { GraduationCap, Award } from 'lucide-react'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 const education = [
@@ -19,16 +19,7 @@ const education = [
   },
 ]
 
-const certificates = [
-  {
-    platform: 'Udemy',
-    course: 'Curso completo de React',
-  },
-  {
-    platform: 'Coursera',
-    course: 'Certificado Google Cybersecurity Professional',
-  },
-]
+const certificateKeys = ['udemy', 'coursera']
 
 export default function Education() {
   const { t } = useLanguage()
@@ -93,19 +84,65 @@ export default function Education() {
               {t('education.certificates')}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {certificates.map((cert, index) => (
-                <motion.div
-                  key={`${cert.platform}-${index}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className={`bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow border ${index === 0 ? 'border-primary-100' : 'border-accent-100'}`}
-                >
-                  <p className="font-bold text-gray-900 mb-2">{cert.platform}</p>
-                  <p className="text-gray-700">{cert.course}</p>
-                </motion.div>
-              ))}
+              {certificateKeys.map((certKey, index) => {
+                const platform = t(`education.certificatesList.${certKey}.platform`)
+                const course = t(`education.certificatesList.${certKey}.course`)
+                const gradients = [
+                  'from-primary-500 via-primary-400 to-primary-600',
+                  'from-accent-500 via-accent-400 to-accent-600',
+                ]
+                const iconColors = [
+                  'from-primary-500 to-primary-600',
+                  'from-accent-500 to-accent-600',
+                ]
+                
+                return (
+                  <motion.div
+                    key={certKey}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    className="group relative bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100"
+                    whileHover={{ y: -5 }}
+                  >
+                    {/* Gradient background overlay */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${gradients[index]} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
+                    
+                    <div className="relative p-6">
+                      <div className="flex items-start gap-4 mb-4">
+                        <div className={`p-3 bg-gradient-to-br ${iconColors[index]} rounded-lg shadow-md group-hover:scale-110 transition-transform duration-300`}>
+                          <Award className="w-6 h-6 text-white" />
+                        </div>
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2 mb-2">
+                            <p className={`font-bold text-lg bg-gradient-to-r ${iconColors[index]} bg-clip-text text-transparent`}>
+                              {platform}
+                            </p>
+                            <span className={`px-2 py-0.5 text-xs font-semibold rounded-full ${index === 0 ? 'bg-primary-100 text-primary-700' : 'bg-accent-100 text-accent-700'}`}>
+                              Verified
+                            </span>
+                          </div>
+                          <p className="text-gray-800 font-medium leading-relaxed">
+                            {course}
+                          </p>
+                        </div>
+                      </div>
+                      
+                      {/* Decorative line */}
+                      <div className={`h-1 bg-gradient-to-r ${gradients[index]} rounded-full mb-4`}></div>
+                      
+                      {/* Footer with icon */}
+                      <div className="flex items-center">
+                        <div className="flex items-center gap-2 text-sm text-gray-500">
+                          <Award className="w-4 h-4" />
+                          <span>Certificate</span>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                )
+              })}
             </div>
           </div>
         </div>

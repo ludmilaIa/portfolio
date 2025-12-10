@@ -6,7 +6,7 @@ import { useLanguage } from '@/contexts/LanguageContext'
 
 const socialLinks = [
   { icon: Mail, href: 'mailto:ludmilaa.iavarone@gmail.com', label: 'Email' },
-  { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/in/ludmila-iavarone-luiz', label: 'LinkedIn' },
   { icon: Github, href: 'https://github.com/ludmilaIa', label: 'GitHub' },
 ]
 

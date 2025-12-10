@@ -1,40 +1,21 @@
 'use client'
 
 import { motion } from 'framer-motion'
-
-const skills = [
-  { name: 'Flutter/Dart', level: 85 },
-  { name: 'Vue.js', level: 80 },
-  { name: 'React', level: 75 },
-  { name: 'Python', level: 80 },
-  { name: 'Django', level: 75 },
-  { name: 'Laravel PHP', level: 70 },
-  { name: 'Java', level: 70 },
-  { name: 'HTML/CSS', level: 90 },
-  { name: 'SQL', level: 80 },
-  { name: 'Ionic', level: 75 },
-  { name: 'REST APIs', level: 85 },
-  { name: 'Docker', level: 70 },
-]
-
-'use client'
-
-import { motion } from 'framer-motion'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 const skills = [
   { name: 'Flutter/Dart', level: 85 },
   { name: 'Vue.js', level: 80 },
-  { name: 'React', level: 75 },
+  { name: 'React', level: 70 },
   { name: 'Python', level: 80 },
-  { name: 'Django', level: 75 },
-  { name: 'Laravel PHP', level: 70 },
-  { name: 'Java', level: 70 },
+  { name: 'Django', level: 60 },
+  { name: 'Laravel PHP', level: 60 },
+  { name: 'Java', level: 60 },
   { name: 'HTML/CSS', level: 90 },
-  { name: 'SQL', level: 80 },
-  { name: 'Ionic', level: 75 },
-  { name: 'REST APIs', level: 85 },
-  { name: 'Docker', level: 70 },
+  { name: 'SQL', level: 75 },
+  { name: 'Ionic', level: 60 },
+  { name: 'REST APIs', level: 70 },
+  { name: 'Docker', level: 50 },
 ]
 
 export default function Skills() {
