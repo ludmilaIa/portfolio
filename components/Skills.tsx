@@ -12,6 +12,7 @@ const skills = [
   { name: 'Laravel PHP', level: 60 },
   { name: 'Java', level: 60 },
   { name: 'HTML/CSS', level: 90 },
+  { name: 'JavaScript', level: 80 },
   { name: 'SQL', level: 75 },
   { name: 'Ionic', level: 60 },
   { name: 'REST APIs', level: 70 },

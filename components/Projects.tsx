@@ -29,6 +29,14 @@ const projects = [
     github: 'https://github.com/ludmilaIa/encomiendas_centro',
     demo: '#',
   },
+  {
+    title: 'Twisted Wonderland',
+    description:
+      'A static multi-page site built with vanilla web technologies. Organized sections, custom styling, and lightweight client-side behavior.',
+    tech: ['HTML', 'CSS', 'JavaScript'],
+    github: 'https://github.com/ludmilaIa/twisted-wonderland',
+    demo: '#',
+  },
 ]
 
 export default function Projects() {

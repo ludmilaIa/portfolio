@@ -85,9 +85,6 @@ const translations = {
       title: 'Contáctame',
       description: 'Siempre estoy abierta a discutir nuevos proyectos, ideas creativas u oportunidades para ser parte de tus visiones.',
     },
-    cv: {
-      download: 'Descargar CV en PDF',
-    },
   },
   en: {
     nav: {
@@ -160,9 +157,6 @@ const translations = {
     contact: {
       title: 'Get In Touch',
       description: "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.",
-    },
-    cv: {
-      download: 'Download CV in PDF format',
     },
   },
 }

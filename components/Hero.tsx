@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowDown, Download } from 'lucide-react'
+import { ArrowDown } from 'lucide-react'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function Hero() {
@@ -63,16 +63,6 @@ export default function Hero() {
               whileTap={{ scale: 0.95 }}
             >
               {t('hero.getInTouch')}
-            </motion.a>
-            <motion.a
-              href="/cv.pdf"
-              download
-              className="px-8 py-3 bg-gradient-to-r from-secondary-600 to-primary-600 text-white rounded-lg font-semibold hover:from-secondary-700 hover:to-primary-700 transition-all shadow-lg hover:shadow-xl flex items-center gap-2"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Download className="w-5 h-5" />
-              {t('cv.download')}
             </motion.a>
           </motion.div>
         </motion.div>
