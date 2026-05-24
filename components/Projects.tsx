@@ -37,6 +37,14 @@ const projects = [
     github: 'https://github.com/ludmilaIa/twisted-wonderland',
     demo: '#',
   },
+  {
+    title: 'BooksTracker',
+    description:
+      'A Vue 3 application for tracking books and reading progress. Built with Vite for fast development and a modern single-page app experience.',
+    tech: ['Vue.js', 'Vite', 'JavaScript'],
+    github: 'https://github.com/ludmilaIa/BooksTracker',
+    demo: '#',
+  },
 ]
 
 export default function Projects() {
