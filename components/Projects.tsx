@@ -6,6 +6,14 @@ import { useLanguage } from '@/contexts/LanguageContext'
 
 const projects = [
   {
+    title: 'Alphabet Challenge',
+    description:
+      'A Flutter mobile game where players complete alphabet challenges. Uses Isar for local persistence of game statistics and progress.',
+    tech: ['Flutter', 'Dart', 'Isar', 'Mobile Development'],
+    github: 'https://github.com/ludmilaIa/alphabet_challenge',
+    demo: '#',
+  },
+  {
     title: 'My Calendar',
     description:
       'A Flutter-based calendar application for managing events and schedules. Built with cross-platform mobile development best practices.',
