@@ -17,6 +17,9 @@ const skills = [
   { name: 'Ionic', level: 60 },
   { name: 'REST APIs', level: 70 },
   { name: 'Docker', level: 50 },
+  { name: 'Git', level: 60 },
+  { name: 'GitHub', level: 60 },
+  { name: 'AWS', level: 50 },
 ]
 
 export default function Skills() {

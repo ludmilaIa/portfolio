@@ -19,7 +19,7 @@ const education = [
   },
 ]
 
-const certificateKeys = ['udemy', 'coursera']
+const certificateKeys = ['udemyBigData', 'udemy', 'coursera']
 
 export default function Education() {
   const { t } = useLanguage()
@@ -90,11 +90,21 @@ export default function Education() {
                 const gradients = [
                   'from-primary-500 via-primary-400 to-primary-600',
                   'from-accent-500 via-accent-400 to-accent-600',
+                  'from-secondary-500 via-secondary-400 to-secondary-600',
                 ]
                 const iconColors = [
                   'from-primary-500 to-primary-600',
                   'from-accent-500 to-accent-600',
+                  'from-secondary-500 to-secondary-600',
                 ]
+                const gradient = gradients[index % gradients.length]
+                const iconColor = iconColors[index % iconColors.length]
+                const badgeColors = [
+                  'bg-primary-100 text-primary-700',
+                  'bg-accent-100 text-accent-700',
+                  'bg-secondary-100 text-secondary-700',
+                ]
+                const badgeColor = badgeColors[index % badgeColors.length]
                 
                 return (
                   <motion.div
@@ -107,19 +117,19 @@ export default function Education() {
                     whileHover={{ y: -5 }}
                   >
                     {/* Gradient background overlay */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${gradients[index]} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
+                    <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
                     
                     <div className="relative p-6">
                       <div className="flex items-start gap-4 mb-4">
-                        <div className={`p-3 bg-gradient-to-br ${iconColors[index]} rounded-lg shadow-md group-hover:scale-110 transition-transform duration-300`}>
+                        <div className={`p-3 bg-gradient-to-br ${iconColor} rounded-lg shadow-md group-hover:scale-110 transition-transform duration-300`}>
                           <Award className="w-6 h-6 text-white" />
                         </div>
                         <div className="flex-1">
                           <div className="flex items-center gap-2 mb-2">
-                            <p className={`font-bold text-lg bg-gradient-to-r ${iconColors[index]} bg-clip-text text-transparent`}>
+                            <p className={`font-bold text-lg bg-gradient-to-r ${iconColor} bg-clip-text text-transparent`}>
                               {platform}
                             </p>
-                            <span className={`px-2 py-0.5 text-xs font-semibold rounded-full ${index === 0 ? 'bg-primary-100 text-primary-700' : 'bg-accent-100 text-accent-700'}`}>
+                            <span className={`px-2 py-0.5 text-xs font-semibold rounded-full ${badgeColor}`}>
                               Verified
                             </span>
                           </div>
@@ -130,7 +140,7 @@ export default function Education() {
                       </div>
                       
                       {/* Decorative line */}
-                      <div className={`h-1 bg-gradient-to-r ${gradients[index]} rounded-full mb-4`}></div>
+                      <div className={`h-1 bg-gradient-to-r ${gradient} rounded-full mb-4`}></div>
                       
                       {/* Footer with icon */}
                       <div className="flex items-center">
