@@ -53,6 +53,10 @@ const translations = {
       education: 'Educación',
       certificates: 'Cursos y Certificados',
       certificatesList: {
+        udemyBigData: {
+          platform: 'Udemy',
+          course: 'Big Data: De principiante a experto',
+        },
         udemy: {
           platform: 'Udemy',
           course: 'Curso completo de React',
@@ -126,6 +130,10 @@ const translations = {
       education: 'Education',
       certificates: 'Courses & Certificates',
       certificatesList: {
+        udemyBigData: {
+          platform: 'Udemy',
+          course: 'Big Data: From Beginner to Expert',
+        },
         udemy: {
           platform: 'Udemy',
           course: 'Complete React Course',

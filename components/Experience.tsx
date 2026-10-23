@@ -9,7 +9,7 @@ const experiences = [
     title: 'Mobile Application Developer',
     company: 'PlayerUp',
     location: 'Oakland, USA',
-    period: 'September 2024 - July 2025',
+    period: 'September 2024 - currently',
     responsibilities: [
       'Integration of REST APIs to enable communication between the frontend and external services',
       'Development of new screens and reusable components, prioritizing user experience',
